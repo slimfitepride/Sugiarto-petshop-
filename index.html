@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sugiarto Petshop Bojonegoro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Header -->
+  <header class="bg-red-600 py-6 text-center">
+    <h1 class="text-3xl font-bold">🐾 Sugiarto Petshop🐾 BOJONEGORO</h1>
+    <div id="jam-digital" class="mx-auto mt-2">00:00:00</div>
+    <canvas id="jam-analog" width="100" height="100" class="mx-auto mt-3"></canvas>
+    <p class="mt-2 text-sm">
+       Kebutuhan Anabul habis ?? </p>
+       <p1>Mau pesen kebutuhan buat Anabul tapi ngga ada waktu buat dateng ke toko, pengen di kirim ke rumah tapi takut kena biaya ongkir ??</p1>
+       
+        <p2> Dapatkan  persediaan dan grooming Anabul di sini
+      lebih Mudah & Cepat</p2>
+  </header>
+
+  <!-- Hero -->
+  <section class="text-center py-8 px-4 bg-red-700">
+    <h2 class="text-2xl font-bold mb-2">🎁 Gratis Ongkir!</h2>
+    <p class="mb-2 text-sm">
+      Dalam kota min. order Rp50.000<br>
+      Balen, Sumberjo, Dander, Ngasem, Kalitidu, Soko min. Rp100.000
+    </p>
+    <a href="#form" class="inline-block mt-4 bg-white text-red-700 px-6 py-2 rounded-full font-bold shadow hover:bg-gray-200 transition">
+      Booking Sekarang
+    </a>
+  </section>
+
+  <!-- Copywriting Section -->
+  <section class="bg-black py-8 px-6">
+    <div class="max-w-xl mx-auto text-center">
+      <h3 class="text-xl font-bold mb-3">🐾 Kami Menyediakan Kebutuhan Hewan Anda:</h3>
+      <ul class="text-left mb-4 text-sm leading-relaxed">
+        <li>• Pakan untuk kucing, anjing, hamster, kelinci</li>
+        <li>• Aksesoris lucu & unik</li>
+        <li>• Obat-obatan & vitamin</li>
+        <li>• Kandang berbagai ukuran</li>
+        <li>• Pasir kucing berbagai varian</li>
+      </ul>
+      <p class="mb-4 text-sm">✂️ Kami juga <strong>melayani grooming & penitipan</strong> untuk kucing dan anjing.</p>
+      <p class="mb-4 text-sm">🕗 Buka setiap hari pukul <strong>08.00 – 20.00 WIB</strong></p>
+      <a href="https://wa.me/6285712401996?text=Halo kak%2C%20Saya%20mau%20tanya %3F" target="_blank"
+         class="inline-block bg-green-500 hover:bg-green-400 text-white px-5 py-2 rounded-full font-semibold transition">
+        Tanya Ketersediaan Barang di WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- Jadwal Grooming -->
+  <section class="bg-gray-900 py-8 px-4 text-center">
+    <h3 class="text-xl font-semibold mb-4">📅 Booking Jadwal Grooming</h3>
+    <form id="form" class="max-w-md mx-auto bg-gray-800 p-4 rounded-lg shadow space-y-4">
+      <input type="text" id="nama" placeholder="Nama Anda" class="w-full px-3 py-2 rounded bg-gray-700 text-white" required />
+      <input type="text" id="hewan" placeholder="Jenis Hewan (Kucing/Anjing)" class="w-full px-3 py-2 rounded bg-gray-700 text-white" required />
+      <input type="date" id="tanggal" class="w-full px-3 py-2 rounded bg-gray-700 text-white" required />
+      <input type="time" id="jam" class="w-full px-3 py-2 rounded bg-gray-700 text-white" required />
+      <button type="submit" class="w-full bg-red-600 hover:bg-red-500 px-4 py-2 rounded text-white font-bold">
+        📲 Kirim Booking via WhatsApp
+      </button>
+    </form>
+  </section>
+
+  <!-- Lokasi Maps -->
+  <section class="bg-gray-800 py-6 px-4">
+    <h3 class="text-xl font-semibold text-center mb-4">📍 Lokasi Sugiarto Petshop</h3>
+    <div class="max-w-4xl mx-auto rounded overflow-hidden shadow-lg">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.008942740001!2d111.8977754749572!3d-7.573029692438961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e77834b28a66c15%3A0xb25dc0f6ec66ad3!2sJl.%20Untung%20Suropati%20No.56A%2C%20Sumbang%2C%20Klangon%2C%20Kec.%20Bojonegoro%2C%20Kabupaten%20Bojonegoro%2C%20Jawa%20Timur%2062113!5e0!3m2!1sid!2sid!4v1721200000000"
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-center py-4 text-sm text-gray-400">
+    Jl. Untung Suropati No.56A, Sumbang, Klangon, Kec. Bojonegoro, Kabupaten Bojonegoro, Jawa Timur 62113
+    <br>&copy; Sugiarto Petshop - Bojonegoro
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Jam Digital
+    function updateJam() {
+      const jam = document.getElementById('jam-digital');
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      jam.textContent = `${h}:${m}:${s}`;
+    }
+    setInterval(updateJam, 1000);
+    updateJam();
+
+    // Booking Form ke WhatsApp
+    const form = document.getElementById('form');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nama = document.getElementById('nama').value;
+      const hewan = document.getElementById('hewan').value;
+      const tanggalRaw = document.getElementById('tanggal').value;
+      const jamRaw = document.getElementById('jam').value;
+      const tanggalObj = new Date(tanggalRaw);
+      const tanggalFormatted = tanggalObj.toLocaleDateString('id-ID', {
+        day: '2-digit', month: '2-digit', year: 'numeric'
+      });
+      const pesan = `Halo, saya ingin booking grooming untuk:\n\nNama: ${nama}\nHewan: ${hewan}\nTanggal: ${tanggalFormatted}\nJam: ${jamRaw}\n\nApakah slot ini tersedia?`;
+      const url = `https://wa.me/6285712401996?text=${encodeURIComponent(pesan)}`;
+      window.open(url, '_blank');
+    });
+
+    // Jam Analog
+    function drawJamAnalog() {
+      const canvas = document.getElementById("jam-analog");
+      const ctx = canvas.getContext("2d");
+      const radius = canvas.height / 2;
+      ctx.translate(radius, radius);
+      setInterval(() => {
+        ctx.clearRect(-radius, -radius, canvas.width, canvas.height);
+        drawClock(ctx, radius);
+      }, 1000);
+    }
+
+    function drawClock(ctx, radius) {
+      drawFace(ctx, radius);
+      drawNumbers(ctx, radius);
+      drawTime(ctx, radius);
+    }
+
+    function drawFace(ctx, radius) {
+      ctx.beginPath();
+      ctx.arc(0, 0, radius * 0.95, 0, 2 * Math.PI);
+      ctx.fillStyle = "#fff";
+      ctx.fill();
+      ctx.strokeStyle = "#ff0000";
+      ctx.lineWidth = radius * 0.05;
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(0, 0, radius * 0.05, 0, 2 * Math.PI);
+      ctx.fillStyle = "#333";
+      ctx.fill();
+    }
+
+    function drawNumbers(ctx, radius) {
+      ctx.font = radius * 0.15 + "px sans-serif";
+      ctx.textBaseline = "middle";
+      ctx.textAlign = "center";
+      for (let num = 1; num <= 12; num++) {
+        const ang = num * Math.PI / 6;
+        ctx.rotate(ang);
+        ctx.translate(0, -radius * 0.85);
+        ctx.rotate(-ang);
+        ctx.fillText(num.toString(), 0, 0);
+        ctx.rotate(ang);
+        ctx.translate(0, radius * 0.85);
+        ctx.rotate(-ang);
+      }
+    }
+
+    function drawTime(ctx, radius) {
+      const now = new Date();
+      let hour = now.getHours();
+      let minute = now.getMinutes();
+      let second = now.getSeconds();
+      hour = hour % 12;
+      hour = (hour * Math.PI / 6) +
+             (minute * Math.PI / (6 * 60)) +
+             (second * Math.PI / (360 * 60));
+      drawHand(ctx, hour, radius * 0.5, radius * 0.07);
+      minute = (minute * Math.PI / 30) + (second * Math.PI / (30 * 60));
+      drawHand(ctx, minute, radius * 0.75, radius * 0.07);
+      second = (second * Math.PI / 30);
+      drawHand(ctx, second, radius * 0.85, radius * 0.02, "#ff0000");
+    }
+
+    function drawHand(ctx, pos, length, width, color = "#333") {
+      ctx.beginPath();
+      ctx.lineWidth = width;
+      ctx.lineCap = "round";
+      ctx.strokeStyle = color;
+      ctx.moveTo(0, 0);
+      ctx.rotate(pos);
+      ctx.lineTo(0, -length);
+      ctx.stroke();
+      ctx.rotate(-pos);
+    }
+
+    drawJamAnalog();
+  </script>
+
+</body>
+</html>
